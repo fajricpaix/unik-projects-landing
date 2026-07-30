@@ -1,65 +1,163 @@
 import Image from "next/image";
+import header from "../../public/header.jpg";
+
+const SERVICES = [
+  {
+    title: "Aplikasi Mobile",
+    description:
+      "Aplikasi Android yang simpel, ringan, dan fokus pada kebutuhan pengguna sehari-hari.",
+  },
+  {
+    title: "Game Android",
+    description: "Game kasual yang seru dimainkan kapan aja, tanpa ribet.",
+  },
+  {
+    title: "Eksperimen & Side Project",
+    description:
+      "Tempat kami coba teknologi dan ide baru sebelum jadi produk yang lebih matang.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      {/* Hero */}
+      <section className="relative isolate flex min-h-140 items-center overflow-hidden">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src={header}
+          alt="Banner Unik Projects"
+          fill
           priority
+          placeholder="blur"
+          sizes="100vw"
+          className="-z-10 object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <div className="absolute inset-0 -z-10 bg-brand-navy-dark/70" />
+        <div className="mx-auto max-w-6xl px-6 py-24 text-center sm:text-left">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+            Unik Projects
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-3 text-lg font-medium text-brand-gold sm:text-xl">
+            Studio kecil, karya iseng yang serius.
           </p>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:mx-0">
+            Kami adalah developer studio independen yang lahir dari waktu
+            luang — tempat eksperimen, belajar, dan bikin aplikasi serta game
+            yang seru buat dipakai (dan dimainkan) siapa aja.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:justify-start">
+            <a
+              href="#karya"
+              className="rounded-full bg-brand-gold px-7 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:scale-105"
+            >
+              Lihat Karya Kami
+            </a>
+            <a
+              href="#kontak"
+              className="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Hubungi Kami
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+
+      {/* About */}
+      <section className="mx-auto max-w-4xl px-6 py-20 text-center">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
+          Tentang Kami
+        </h2>
+        <p className="mt-4 text-lg leading-relaxed text-brand-navy-dark/90">
+          <strong>Unik Projects</strong> adalah developer studio yang
+          dibangun untuk mengisi waktu luang dengan hal yang produktif dan
+          menyenangkan. Kami percaya ide-ide kecil yang dikerjakan dengan
+          niat bisa jadi sesuatu yang unik dan berguna.
+        </p>
+        <p className="mt-4 text-lg leading-relaxed text-brand-navy-dark/90">
+          Dimulai dari eksplorasi pengembangan aplikasi mobile, Unik Projects
+          terus berkembang — mulai dari aplikasi sehari-hari sampai game
+          ringan untuk Android yang bisa dinikmati semua kalangan, dari
+          remaja sampai dewasa muda.
+        </p>
+      </section>
+
+      {/* Services */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-center text-sm font-bold uppercase tracking-widest text-brand-red">
+            Apa yang Kami Kerjakan
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {SERVICES.map((service) => (
+              <div
+                key={service.title}
+                className="rounded-2xl border border-brand-navy/10 bg-brand-cream p-8 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <h3 className="text-lg font-bold text-brand-navy-dark">
+                  {service.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-brand-navy-dark/75">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Unik Projects */}
+      <section className="mx-auto max-w-4xl px-6 py-20 text-center">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
+          Kenapa &ldquo;Unik Projects&rdquo;?
+        </h2>
+        <p className="mt-4 text-lg leading-relaxed text-brand-navy-dark/90">
+          Karena setiap project yang kami buat lahir dari rasa penasaran,
+          bukan sekadar target bisnis. Kami mengerjakan sesuatu karena ingin
+          belajar dan berkarya — hasilnya, produk yang unik, jujur, dan
+          dibuat dengan perhatian ke detail.
+        </p>
+      </section>
+
+      {/* Our Work */}
+      <section id="karya" className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
+            Karya Kami
+          </h2>
+          <p className="mt-4 text-lg text-brand-navy-dark/70">
+            Segera hadir — nantikan aplikasi dan game pertama kami!
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {[1, 2, 3].map((placeholder) => (
+              <div
+                key={placeholder}
+                className="flex aspect-square items-center justify-center rounded-2xl border-2 border-dashed border-brand-navy/15 bg-brand-cream text-sm font-medium text-brand-navy-dark/40"
+              >
+                Segera Hadir
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="kontak" className="bg-brand-navy-dark py-20 text-white">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-brand-gold">
+            Kontak
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-white/85">
+            Punya pertanyaan, masukan, atau mau kolaborasi? Kami senang
+            mendengar dari kamu.
+          </p>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:panggilsaya.fajri@gmail.com"
+            className="mt-6 inline-block rounded-full bg-brand-gold px-8 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:scale-105"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            panggilsaya.fajri@gmail.com
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
