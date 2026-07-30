@@ -9,7 +9,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-navy-dark/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-brand-gold/15 bg-brand-black/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center gap-3">
           <Image
@@ -20,9 +20,6 @@ export default function Header() {
             className="h-11 w-11"
             priority
           />
-          <span className="text-lg font-bold tracking-wide text-white">
-            UNIK <span className="text-brand-gold">PROJECTS</span>
-          </span>
         </Link>
         <nav className="flex items-center gap-6 text-sm font-medium text-white/85">
           {NAV_LINKS.map((link) => (

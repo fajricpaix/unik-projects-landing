@@ -14,8 +14,8 @@ function Section({
 }) {
   return (
     <section className="mt-10">
-      <h2 className="text-xl font-bold text-brand-navy-dark">{title}</h2>
-      <div className="mt-3 space-y-4 text-base leading-relaxed text-brand-navy-dark/85">
+      <h2 className="text-xl font-bold text-white">{title}</h2>
+      <div className="mt-3 space-y-4 text-base leading-relaxed text-brand-ivory/80">
         {children}
       </div>
     </section>
@@ -26,10 +26,10 @@ export default function PrivacyPolicy() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       <header>
-        <h1 className="text-3xl font-extrabold text-brand-navy-dark sm:text-4xl">
+        <h1 className="text-3xl font-extrabold text-white sm:text-4xl">
           Kebijakan Privasi
         </h1>
-        <p className="mt-3 text-sm text-brand-navy-dark/60">
+        <p className="mt-3 text-sm text-brand-ivory/50">
           Kebijakan Privasi ini dibuat untuk memenuhi kebutuhan submission
           Google Play Console. Berlaku untuk aplikasi dan game yang
           dikembangkan oleh Unik Projects.
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
             Kebijakan Privasi Google:{" "}
             <a
               href="https://policies.google.com/privacy"
-              className="font-medium text-brand-red underline underline-offset-2"
+              className="font-medium text-brand-gold underline underline-offset-2 hover:text-brand-gold/80"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -116,7 +116,7 @@ export default function PrivacyPolicy() {
             Google:{" "}
             <a
               href="https://policies.google.com/technologies/partner-sites"
-              className="font-medium text-brand-red underline underline-offset-2"
+              className="font-medium text-brand-gold underline underline-offset-2 hover:text-brand-gold/80"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -221,7 +221,7 @@ export default function PrivacyPolicy() {
           Email:{" "}
           <a
             href="mailto:panggilsaya.fajri@gmail.com"
-            className="font-medium text-brand-red underline underline-offset-2"
+            className="font-medium text-brand-gold underline underline-offset-2 hover:text-brand-gold/80"
           >
             panggilsaya.fajri@gmail.com
           </a>

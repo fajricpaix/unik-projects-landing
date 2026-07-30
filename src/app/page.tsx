@@ -1,5 +1,16 @@
 import Image from "next/image";
 import header from "../../public/header.jpg";
+import ttsLogo from "../../public/tts.webp";
+
+const WORKS = [
+  {
+    title: "TekaTekiYuk!",
+    logo: ttsLogo,
+    category: "Game Android",
+    description:
+      "Game teka-teki kata seru untuk mengasah otak, dimainkan kapan aja.",
+  },
+];
 
 const SERVICES = [
   {
@@ -32,7 +43,7 @@ export default function Home() {
           sizes="100vw"
           className="-z-10 object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-brand-navy-dark/70" />
+        <div className="absolute inset-0 -z-10 bg-black/75" />
         <div className="mx-auto max-w-6xl px-6 py-24 text-center sm:text-left">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
             Unik Projects
@@ -40,7 +51,7 @@ export default function Home() {
           <p className="mt-3 text-lg font-medium text-brand-gold sm:text-xl">
             Studio kecil, karya iseng yang serius.
           </p>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:mx-0">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-brand-ivory/80 sm:mx-0">
             Kami adalah developer studio independen yang lahir dari waktu
             luang — tempat eksperimen, belajar, dan bikin aplikasi serta game
             yang seru buat dipakai (dan dimainkan) siapa aja.
@@ -48,13 +59,13 @@ export default function Home() {
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:justify-start">
             <a
               href="#karya"
-              className="rounded-full bg-brand-gold px-7 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:scale-105"
+              className="rounded-full bg-brand-gold px-7 py-3 text-sm font-semibold text-brand-black transition-transform hover:scale-105"
             >
               Lihat Karya Kami
             </a>
             <a
               href="#kontak"
-              className="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              className="rounded-full border border-brand-red/60 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-red hover:bg-brand-red/15"
             >
               Hubungi Kami
             </a>
@@ -67,13 +78,13 @@ export default function Home() {
         <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
           Tentang Kami
         </h2>
-        <p className="mt-4 text-lg leading-relaxed text-brand-navy-dark/90">
-          <strong>Unik Projects</strong> adalah developer studio yang
-          dibangun untuk mengisi waktu luang dengan hal yang produktif dan
-          menyenangkan. Kami percaya ide-ide kecil yang dikerjakan dengan
-          niat bisa jadi sesuatu yang unik dan berguna.
+        <p className="mt-4 text-lg leading-relaxed text-brand-ivory/85">
+          <strong className="text-white">Unik Projects</strong> adalah
+          developer studio yang dibangun untuk mengisi waktu luang dengan hal
+          yang produktif dan menyenangkan. Kami percaya ide-ide kecil yang
+          dikerjakan dengan niat bisa jadi sesuatu yang unik dan berguna.
         </p>
-        <p className="mt-4 text-lg leading-relaxed text-brand-navy-dark/90">
+        <p className="mt-4 text-lg leading-relaxed text-brand-ivory/85">
           Dimulai dari eksplorasi pengembangan aplikasi mobile, Unik Projects
           terus berkembang — mulai dari aplikasi sehari-hari sampai game
           ringan untuk Android yang bisa dinikmati semua kalangan, dari
@@ -82,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="bg-white py-20">
+      <section className="bg-brand-surface py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center text-sm font-bold uppercase tracking-widest text-brand-red">
             Apa yang Kami Kerjakan
@@ -91,12 +102,12 @@ export default function Home() {
             {SERVICES.map((service) => (
               <div
                 key={service.title}
-                className="rounded-2xl border border-brand-navy/10 bg-brand-cream p-8 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-2xl border border-white/10 bg-brand-black/60 p-8 transition-colors hover:border-brand-gold/40"
               >
-                <h3 className="text-lg font-bold text-brand-navy-dark">
+                <h3 className="text-lg font-bold text-white">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-brand-navy-dark/75">
+                <p className="mt-3 text-sm leading-relaxed text-brand-ivory/70">
                   {service.description}
                 </p>
               </div>
@@ -110,7 +121,7 @@ export default function Home() {
         <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
           Kenapa &ldquo;Unik Projects&rdquo;?
         </h2>
-        <p className="mt-4 text-lg leading-relaxed text-brand-navy-dark/90">
+        <p className="mt-4 text-lg leading-relaxed text-brand-ivory/85">
           Karena setiap project yang kami buat lahir dari rasa penasaran,
           bukan sekadar target bisnis. Kami mengerjakan sesuatu karena ingin
           belajar dan berkarya — hasilnya, produk yang unik, jujur, dan
@@ -119,40 +130,58 @@ export default function Home() {
       </section>
 
       {/* Our Work */}
-      <section id="karya" className="bg-white py-20">
+      <section id="karya" className="bg-brand-surface py-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
             Karya Kami
           </h2>
-          <p className="mt-4 text-lg text-brand-navy-dark/70">
-            Segera hadir — nantikan aplikasi dan game pertama kami!
+          <p className="mt-4 text-lg text-brand-ivory/70">
+            Aplikasi dan game yang sudah kami rilis.
           </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {[1, 2, 3].map((placeholder) => (
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
+            {WORKS.map((work) => (
               <div
-                key={placeholder}
-                className="flex aspect-square items-center justify-center rounded-2xl border-2 border-dashed border-brand-navy/15 bg-brand-cream text-sm font-medium text-brand-navy-dark/40"
+                key={work.title}
+                className="flex w-72 flex-col items-center rounded-2xl border border-white/10 bg-brand-black/60 p-8 text-center transition-colors hover:border-brand-gold/40"
               >
-                Segera Hadir
+                <Image
+                  src={work.logo}
+                  alt={`Logo ${work.title}`}
+                  width={88}
+                  height={88}
+                  className="h-22 w-22 rounded-2xl"
+                />
+                <h3 className="mt-4 text-lg font-bold text-white">
+                  {work.title}
+                </h3>
+                <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-gold">
+                  {work.category}
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-brand-ivory/70">
+                  {work.description}
+                </p>
               </div>
             ))}
           </div>
+          <p className="mt-8 text-sm text-brand-ivory/40">
+            Karya lainnya segera menyusul.
+          </p>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="kontak" className="bg-brand-navy-dark py-20 text-white">
+      <section id="kontak" className="bg-brand-red-deep py-20 text-white">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-sm font-bold uppercase tracking-widest text-brand-gold">
             Kontak
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-white/85">
+          <p className="mt-4 text-lg leading-relaxed text-brand-ivory/85">
             Punya pertanyaan, masukan, atau mau kolaborasi? Kami senang
             mendengar dari kamu.
           </p>
           <a
             href="mailto:panggilsaya.fajri@gmail.com"
-            className="mt-6 inline-block rounded-full bg-brand-gold px-8 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:scale-105"
+            className="mt-6 inline-block rounded-full bg-brand-gold px-8 py-3 text-sm font-semibold text-brand-black transition-transform hover:scale-105"
           >
             panggilsaya.fajri@gmail.com
           </a>
