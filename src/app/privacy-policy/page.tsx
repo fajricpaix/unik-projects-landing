@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Unik Projects",
@@ -26,7 +27,15 @@ export default function PrivacyPolicy() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       <header>
-        <h1 className="text-3xl font-extrabold text-white sm:text-4xl">
+        <p className="text-sm">
+          <Link
+            href="/privacy-policy/en"
+            className="font-medium text-brand-gold underline underline-offset-2 hover:text-brand-gold/80"
+          >
+            Read in English
+          </Link>
+        </p>
+        <h1 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
           Kebijakan Privasi
         </h1>
         <p className="mt-3 text-sm text-brand-ivory/50">
