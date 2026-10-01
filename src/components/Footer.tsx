@@ -16,6 +16,10 @@ export default function Footer() {
           >
             Privacy Policy
           </Link>
+          <span aria-hidden="true">&middot;</span>
+          <Link href="/terms" className="transition-colors hover:text-brand-gold">
+            Terms
+          </Link>
         </div>
       </div>
     </footer>
