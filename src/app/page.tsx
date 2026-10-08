@@ -1,6 +1,7 @@
 import Image from "next/image";
 import header from "../../public/header.jpg";
-import ttsLogo from "../../public/tts.webp";
+import ttsLogo from "../../public/apps/tekatekiyuk.png";
+import catetinLogo from "../../public/apps/catetin.png";
 
 const WORKS = [
   {
@@ -9,6 +10,15 @@ const WORKS = [
     category: "Game Android",
     description:
       "Game teka-teki kata seru untuk mengasah otak, dimainkan kapan aja.",
+    href: "https://play.google.com/store/apps/details?id=com.tekatekiyuk.tekatekiyuk",
+  },
+  {
+    title: "Catetin",
+    logo: catetinLogo,
+    category: "Aplikasi Android",
+    description:
+      "Catat pesanan, produk, dan laporan toko langsung dari HP. Data tersimpan lokal di perangkatmu.",
+    href: undefined as string | undefined,
   },
 ];
 
@@ -160,6 +170,16 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-relaxed text-brand-ivory/70">
                   {work.description}
                 </p>
+                {work.href && (
+                  <a
+                    href={work.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 rounded-full bg-brand-gold px-5 py-2 text-xs font-semibold text-brand-black transition-transform hover:scale-105"
+                  >
+                    Lihat di Google Play
+                  </a>
+                )}
               </div>
             ))}
           </div>
