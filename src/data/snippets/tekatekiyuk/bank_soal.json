@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "bank_soal": [
+    {
+      "id": "tts_295",
+      "group": "Sains & Teknologi",
+      "category": "Teknologi & Media Sosial",
+      "difficulty": 1,
+      "question": "Perusahaan teknologi asal Cupertino pembuat iPhone.",
+      "answer": "APPLE"
+    },
+    {
+      "id": "tts_1777",
+      "group": "Bahasa, Sejarah & Budaya",
+      "category": "Mitologi & Legenda Nusantara",
+      "difficulty": 2,
+      "question": "Ratu gaib penguasa Laut Selatan dalam kepercayaan masyarakat Jawa.",
+      "answer": "ROROKIDUL"
+    },
+    {
+      "id": "tts_042",
+      "group": "Kehidupan Sehari-hari",
+      "category": "Kuliner",
+      "difficulty": 2,
+      "question": "Makanan khas Sumatra Barat yang dinobatkan salah satu makanan terlezat di dunia.",
+      "answer": "RENDANG"
+    }
+    // …2.683 soal lainnya
+  ]
+}
