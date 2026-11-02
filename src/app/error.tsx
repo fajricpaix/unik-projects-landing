@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import StatusPage from "@/components/StatusPage";
+import StatusPage from "@/components/shared/StatusPage";
 
 export default function Error({
   error,

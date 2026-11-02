@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
+import LottiePlayer from "@/components/shared/LottiePlayer";
+import type { App } from "@/data/apps";
 import type { Locale } from "@/data/i18n";
-import type { App } from "@/data/site";
-import LottiePlayer from "./LottiePlayer";
 
 const COPY = {
   id: { logo: "Logo", soon: "Segera Hadir", show: "Tampilkan" },

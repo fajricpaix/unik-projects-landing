@@ -1,5 +1,6 @@
-import AppDetail, { appMetadata } from "@/components/AppDetail";
-import { APPS } from "@/data/site";
+import AppDetail from "@/components/app-detail/AppDetail";
+import { appMetadata } from "@/components/app-detail/metadata";
+import { APPS } from "@/data/apps";
 
 export const dynamicParams = false;
 

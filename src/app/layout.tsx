@@ -5,10 +5,10 @@ import {
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import MotionProvider from "@/components/MotionProvider";
+import "@/app/globals.css";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/header/Header";
+import MotionProvider from "@/components/layout/MotionProvider";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/data/site";
 
 const jakartaSans = Plus_Jakarta_Sans({
