@@ -31,12 +31,6 @@ html {
   scroll-padding-top: 5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 /* Shiki output inside <CodeEditor>: drop its background, add line numbers. */
 .code-editor pre {
   background: transparent !important;

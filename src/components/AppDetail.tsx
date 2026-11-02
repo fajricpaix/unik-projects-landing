@@ -13,6 +13,15 @@ import MobileCta from "@/components/MobileCta";
 import { localePath, type Locale } from "@/data/i18n";
 import { SITE_NAME, SITE_URL, getApp, getApps } from "@/data/site";
 
+// Same blur-to-sharp scroll reveal as the home page.
+const reveal = (delay = 0) =>
+  ({
+    initial: { opacity: 0, y: 48, filter: "blur(10px)" },
+    whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+    viewport: { once: true, margin: "-80px" },
+    transition: { duration: 1, delay, ease: [0.22, 1, 0.36, 1] },
+  }) as const;
+
 const COPY = {
   id: {
     kind: (category: string) => `${category} Android`,
@@ -213,10 +222,7 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
             {app.features.map((feature, i) => (
               <motion.li
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                {...reveal(i * 0.09)}
                 className="rounded-2xl border border-white/10 bg-brand-black/60 p-6 transition-colors hover:border-brand-gold/30"
               >
                 <span className="mb-3 block text-xl text-brand-gold">✦</span>
@@ -234,10 +240,7 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
         <div className="absolute -bottom-40 -left-32 -z-10 h-96 w-96 rounded-full bg-brand-red/15 blur-3xl" />
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1fr_1.6fr]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            {...reveal()}
           >
             <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
               {t.behind}
@@ -260,10 +263,7 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
             </ul>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            {...reveal(0.12)}
             className="min-w-0"
           >
             <CodeEditor project={app.slug} files={files} linesLabel={t.lines} />
@@ -275,12 +275,12 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
         <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">
           {t.others}
         </h2>
-        <div className="mt-6">
+        <motion.div {...reveal()} className="mt-6">
           <AppShelf
             apps={getApps(locale).filter((other) => other.slug !== app.slug)}
             locale={locale}
           />
-        </div>
+        </motion.div>
       </section>
 
       {app.playUrl && (

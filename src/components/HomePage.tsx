@@ -6,6 +6,7 @@ import AppShelf from "@/components/AppShelf";
 import BrainCorner from "@/components/BrainCorner";
 import MobileCta from "@/components/MobileCta";
 import HeroVisual from "@/components/HeroVisual";
+import { HeroExit } from "@/components/ScrollEffects";
 import { Spotlight } from "@/components/ui/spotlight";
 import { localePath, type Locale } from "@/data/i18n";
 import {
@@ -219,16 +220,19 @@ export function homeMetadata(locale: Locale): Metadata {
       title: t.title,
       description: t.description,
       // A page-level openGraph replaces the root one, so re-point to app/opengraph-image.
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: SITE_NAME }],
+      images: [
+        { url: "/opengraph-image", width: 1200, height: 630, alt: SITE_NAME },
+      ],
     },
   };
 }
 
+// Content rises out of a soft blur as it scrolls into view.
 const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 48, filter: "blur(10px)" },
+  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
   viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
 } as const;
 
 export default function HomePage({ locale }: { locale: Locale }) {
@@ -305,76 +309,78 @@ export default function HomePage({ locale }: { locale: Locale }) {
         />
         <div className="absolute inset-0 -z-10 bg-linear-to-b from-black/80 via-black/85 to-brand-black" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-brand-gold/15 bg-brand-black/96 shadow-2xl shadow-brand-red/10 lg:h-130"
-        >
-          <Spotlight size={420} />
-          <div className="pointer-events-none absolute -top-40 -left-20 h-96 w-96 rounded-full bg-brand-gold/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-20 -bottom-40 h-96 w-96 rounded-full bg-brand-red/15 blur-3xl" />
+        <HeroExit>
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-brand-gold/15 bg-brand-black/96 shadow-2xl shadow-brand-red/10 lg:h-130"
+          >
+            <Spotlight size={420} />
+            <div className="pointer-events-none absolute -top-40 -left-20 h-96 w-96 rounded-full bg-brand-gold/10 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 -bottom-40 h-96 w-96 rounded-full bg-brand-red/15 blur-3xl" />
 
-          <div className="relative grid h-full lg:grid-cols-[1.15fr_1fr]">
-            <div className="relative z-10 flex flex-col justify-center p-8 text-center sm:p-12 lg:py-0 lg:pr-4 lg:pl-14 lg:text-left">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="mx-auto inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-black/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-gold lg:mx-0 lg:self-start"
-              >
-                <span className="h-2 w-2 animate-pulse rounded-full bg-brand-red" />
-                Unik Studio
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-5 bg-linear-to-b from-brand-ivory to-brand-ivory/50 bg-clip-text pb-1 text-[2rem] leading-[1.1] font-display font-extrabold text-balance tracking-tight text-transparent sm:text-5xl lg:text-[2.75rem] xl:text-5xl"
-              >
-                {t.heroTitle}{" "}
-                <span className="bg-linear-to-r from-brand-gold to-brand-red bg-clip-text text-transparent">
-                  {t.heroAccent}
-                </span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ivory/70 lg:mx-0"
-              >
-                {t.heroBody}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-7 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"
-              >
-                <a
-                  href="#apps"
-                  className="rounded-full bg-brand-gold px-7 py-3 text-sm font-semibold text-brand-black transition-transform hover:scale-105"
+            <div className="relative grid h-full lg:grid-cols-[1.15fr_1fr]">
+              <div className="relative z-10 flex flex-col justify-center p-8 text-center sm:p-12 lg:py-0 lg:pr-4 lg:pl-14 lg:text-left">
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="mx-auto inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-black/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-gold lg:mx-0 lg:self-start"
                 >
-                  {t.explore}
-                </a>
-                {featured.playUrl && (
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-brand-red" />
+                  Unik Studio
+                </motion.p>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="mt-5 bg-linear-to-b from-brand-ivory to-brand-ivory/50 bg-clip-text pb-1 text-[2rem] leading-[1.1] font-display font-extrabold text-balance tracking-tight text-transparent sm:text-5xl lg:text-[2.75rem] xl:text-5xl"
+                >
+                  {t.heroTitle}{" "}
+                  <span className="bg-linear-to-r from-brand-gold to-brand-red bg-clip-text text-transparent">
+                    {t.heroAccent}
+                  </span>
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ivory/70 lg:mx-0"
+                >
+                  {t.heroBody}
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="mt-7 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"
+                >
                   <a
-                    href={featured.playUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-brand-red/60 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-red hover:bg-brand-red/15"
+                    href="#apps"
+                    className="rounded-full bg-brand-gold px-7 py-3 text-sm font-semibold text-brand-black transition-transform hover:scale-105"
                   >
-                    {t.play(featured.title)}
+                    {t.explore}
                   </a>
-                )}
-              </motion.div>
-            </div>
+                  {featured.playUrl && (
+                    <a
+                      href={featured.playUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-brand-red/60 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-red hover:bg-brand-red/15"
+                    >
+                      {t.play(featured.title)}
+                    </a>
+                  )}
+                </motion.div>
+              </div>
 
-            <div className="relative flex items-center justify-center lg:h-full lg:px-10">
-              <HeroVisual apps={apps} locale={locale} />
+              <div className="relative flex items-center justify-center lg:h-full lg:px-10">
+                <HeroVisual apps={apps} locale={locale} />
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </HeroExit>
       </section>
 
       <BrainCorner locale={locale} />
@@ -427,7 +433,8 @@ export default function HomePage({ locale }: { locale: Locale }) {
               </span>
             </p>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-brand-ivory/75 lg:mx-0">
-              <strong className="text-white">Unik Projects</strong> {t.aboutBody}
+              <strong className="text-white">Unik Projects</strong>{" "}
+              {t.aboutBody}
             </p>
             <dl className="mt-10 grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-brand-surface/60 py-5 backdrop-blur-sm">
               {stats.map((stat) => (
@@ -489,7 +496,10 @@ export default function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative isolate overflow-hidden bg-brand-surface py-24">
+      <section
+        id="faq"
+        className="relative isolate overflow-hidden bg-brand-surface py-24"
+      >
         <div className="mx-auto max-w-3xl px-6">
           <motion.div {...fadeUp} className="text-center">
             <h2 className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-brand-red">
@@ -516,7 +526,9 @@ export default function HomePage({ locale }: { locale: Locale }) {
                     +
                   </span>
                 </summary>
-                <p className="mt-3 leading-relaxed text-brand-ivory/70">{faq.a}</p>
+                <p className="mt-3 leading-relaxed text-brand-ivory/70">
+                  {faq.a}
+                </p>
               </details>
             ))}
           </div>
@@ -607,7 +619,10 @@ export default function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       {featured.playUrl && (
-        <MobileCta href={featured.playUrl} label={`Download ${featured.title}`} />
+        <MobileCta
+          href={featured.playUrl}
+          label={`Download ${featured.title}`}
+        />
       )}
     </div>
   );
