@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { APPS } from "@/data/apps";
 import { localePath } from "@/data/i18n";
-import { APPS, LEGAL_UPDATED, SITE_URL } from "@/data/site";
+import { LEGAL_UPDATED, SITE_URL } from "@/data/site";
 
 type Entry = Omit<MetadataRoute.Sitemap[number], "url" | "alternates">;
 

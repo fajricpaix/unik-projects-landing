@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionConfig } from "motion/react";
-import ScrollEffects from "./ScrollEffects";
+import ScrollEffects from "@/components/layout/ScrollEffects";
 
 export default function MotionProvider({
   children,

@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
-import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 
 // Inertia scrolling for the whole site, plus a thin gold progress bar.
 export default function ScrollEffects() {
@@ -44,17 +44,3 @@ export default function ScrollEffects() {
   );
 }
 
-// Hero card sinks back and fades as the page scrolls past it.
-export function HeroExit({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
-  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0.25]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
-
-  return (
-    <motion.div ref={ref} style={{ scale, opacity, y }}>
-      {children}
-    </motion.div>
-  );
-}
