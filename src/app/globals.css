@@ -22,12 +22,40 @@
   --color-brand-red-deep: var(--brand-red-deep);
   --color-brand-gold: var(--brand-gold);
   --color-brand-ivory: var(--brand-ivory);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta-sans);
+  --font-display: var(--font-bricolage);
   --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Shiki output inside <CodeEditor>: drop its background, add line numbers. */
+.code-editor pre {
+  background: transparent !important;
+  counter-reset: line;
+  width: max-content;
+  min-width: 100%;
+}
+.code-editor .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2.25rem;
+  margin-right: 1.25rem;
+  text-align: right;
+  color: rgb(245 239 228 / 0.2);
+  user-select: none;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
