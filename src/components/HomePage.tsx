@@ -284,7 +284,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
   };
 
   return (
-    <>
+    <div lang={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -609,6 +609,6 @@ export default function HomePage({ locale }: { locale: Locale }) {
       {featured.playUrl && (
         <MobileCta href={featured.playUrl} label={`Download ${featured.title}`} />
       )}
-    </>
+    </div>
   );
 }

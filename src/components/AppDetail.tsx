@@ -114,7 +114,7 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
   };
 
   return (
-    <>
+    <div lang={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -286,6 +286,6 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
       {app.playUrl && (
         <MobileCta href={app.playUrl} label={`Download ${app.title}`} />
       )}
-    </>
+    </div>
   );
 }
