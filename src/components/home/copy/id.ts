@@ -52,8 +52,8 @@ export const id = {
       a: "Bisa. Progres tersimpan di HP dan bisa disinkronkan lewat akun Google supaya aman saat ganti perangkat.",
     },
     {
-      q: "Kapan Catetin tersedia?",
-      a: "Catetin segera hadir di Google Play. Aplikasinya gratis dengan iklan, tanpa login, dan bisa dipakai tanpa internet karena semua data tersimpan di HP.",
+      q: "Di mana saya bisa dapat Catetin?",
+      a: "Catetin sudah tersedia di Google Play. Aplikasinya gratis dengan iklan, tanpa login, dan bisa dipakai tanpa internet karena semua data tersimpan di HP.",
     },
     {
       q: "Apakah ada versi iPhone (iOS)?",

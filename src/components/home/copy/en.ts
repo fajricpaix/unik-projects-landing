@@ -53,8 +53,8 @@ export const en: HomeCopy = {
       a: "Yes. Your progress is saved on your phone and can sync through your Google account, so it stays safe when you switch devices.",
     },
     {
-      q: "When will Catetin be available?",
-      a: "Catetin is coming soon to Google Play. It's free with ads, needs no login, and works without internet because all data stays on your phone.",
+      q: "Where can I get Catetin?",
+      a: "Catetin is available on Google Play. It's free with ads, needs no login, and works without internet because all data stays on your phone.",
     },
     {
       q: "Is there an iPhone (iOS) version?",
