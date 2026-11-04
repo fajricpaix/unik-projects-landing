@@ -26,7 +26,7 @@ export default function AppCard({
       ref={ref}
       {...pop}
       whileHover={{ y: -6 }}
-      className="group relative flex w-[85%] shrink-0 snap-center flex-col overflow-hidden rounded-3xl border border-white/10 bg-brand-black/70 transition-colors duration-300 hover:border-brand-gold/40 sm:w-auto"
+      className="group relative flex w-[85%] shrink-0 snap-center flex-col overflow-hidden rounded-3xl border border-white/10 bg-brand-black/70 transition-colors duration-300 hover:border-brand-gold/40 sm:w-96"
     >
       <AppCardBanner app={app} status={app.playUrl ? t.available : t.soon} />
 
