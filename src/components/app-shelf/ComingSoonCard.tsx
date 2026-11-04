@@ -21,7 +21,7 @@ export default function ComingSoonCard({
     <motion.article
       ref={ref}
       {...pop}
-      className="relative flex w-[85%] shrink-0 snap-center flex-col items-center gap-4 overflow-hidden rounded-3xl border border-dashed border-brand-gold/30 bg-linear-to-r from-brand-red-deep/60 via-brand-black/40 to-brand-black/40 p-6 text-center sm:col-span-2 sm:w-auto sm:flex-row sm:gap-6 sm:px-8 sm:text-left"
+      className="relative flex w-[85%] shrink-0 snap-center flex-col items-center gap-4 overflow-hidden rounded-3xl border border-dashed border-brand-gold/30 bg-linear-to-r from-brand-red-deep/60 via-brand-black/40 to-brand-black/40 p-6 text-center sm:w-96 sm:justify-center"
     >
       <div className="absolute -left-10 h-40 w-40 rounded-full bg-brand-gold/10 blur-3xl" />
       <LottiePlayer src="/lottie/rocket.json" className="relative h-24 w-24 shrink-0" />

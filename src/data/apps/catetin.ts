@@ -60,6 +60,8 @@ export const catetin: App = {
     },
   ],
   lottie: "/lottie/notes.json",
+  playUrl:
+    "https://play.google.com/store/apps/details?id=com.catetin.unikprojects",
   keywords: ["aplikasi kasir", "catat pesanan", "aplikasi umkm", "laporan toko"],
   en: {
     tagline: "Track orders, products, and shop reports right from your phone.",

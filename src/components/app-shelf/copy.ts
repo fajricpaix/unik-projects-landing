@@ -6,6 +6,8 @@ export const COPY = {
     kind: (category: string) => `${category} Android`,
     logo: (title: string) => `Logo ${title}`,
     detail: "Detail",
+    prev: "Sebelumnya",
+    next: "Berikutnya",
     nextTitle: "Karya berikutnya sedang diracik",
     nextBody:
       "App & game baru lagi dimasak di workshop. Ikuti sosial media kami biar nggak ketinggalan rilisnya!",
@@ -18,6 +20,8 @@ export const COPY = {
     kind: (category: string) => `Android ${category}`,
     logo: (title: string) => `${title} logo`,
     detail: "Details",
+    prev: "Previous",
+    next: "Next",
     nextTitle: "Our next creation is in the works",
     nextBody:
       "New apps & games are cooking in the workshop. Follow our socials so you don't miss the launch!",

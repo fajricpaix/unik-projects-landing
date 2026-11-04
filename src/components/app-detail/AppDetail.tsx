@@ -24,7 +24,7 @@ export default async function AppDetail({ slug, locale }: { slug: string; locale
       <JsonLd data={appJsonLd(app, locale, t)} />
       <AppHero app={app} locale={locale} t={t} />
       <FeatureList title={t.features} features={app.features} />
-      <BehindTheScenes app={app} files={files} t={t} />
+      {files.length > 0 && <BehindTheScenes app={app} files={files} t={t} />}
 
       <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="text-sm font-bold uppercase tracking-widest text-brand-red">{t.others}</h2>
