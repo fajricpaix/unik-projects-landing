@@ -1,11 +1,12 @@
 import { catetin } from "@/data/apps/catetin";
 import { tekatekiyuk } from "@/data/apps/tekatekiyuk";
+import { ularTanggaCerdas } from "@/data/apps/ular-tangga-cerdas";
 import type { App } from "@/data/apps/types";
 import type { Locale } from "@/data/i18n";
 
 export type { App, Snippet } from "@/data/apps/types";
 
-export const APPS: App[] = [tekatekiyuk, catetin];
+export const APPS: App[] = [tekatekiyuk, catetin, ularTanggaCerdas];
 
 function localize(app: App, locale: Locale): App {
   if (locale === "id") return app;
